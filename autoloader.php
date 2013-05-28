@@ -1,9 +1,10 @@
 <?php
 spl_autoload_register(function ($classname) {
-    $classname = ltrim($classname, "\\");
-    preg_match('/^(.+)?([^\\\\]+)$/U', $classname, $match);
-    $classname = str_replace("\\", "/", $match[1])
-        . str_replace(["\\", "_"], "/", $match[2])
-        . ".php";
-    include_once $classname;
+    $trimmedClassname = ltrim($classname, "\\");
+    preg_match('/^(.+)?([^\\\\]+)$/U', $trimmedClassname, $match);
+    $part1 = str_replace("\\", "/", $match[1]);
+    $part2 = str_replace("\\", "/", $match[2]);
+    $part2 = str_replace("_", "/", $part2);
+    $part3 = ".php";
+    @include_once $part1 . $part2 . $part3;
 });
