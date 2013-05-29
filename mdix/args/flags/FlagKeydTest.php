@@ -18,7 +18,7 @@ class FlagKeydTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('mdix\args\flags\StringFlag', get_parent_class($this->object));
     }
 
-    public function testKnowsItsEnding() {
+    public function testKnowsItsArgKey() {
         $this->assertEquals('d', $this->object->getArgKey());
     }
 
