@@ -13,7 +13,7 @@ class FlagRegister {
     private function findAvailableFlagClasses() {
         $classnames = scandir(dirname(__FILE__));
         foreach ($classnames as $classname) {
-            if (preg_match('/FlagKey[A-Za-z]{1}.php/', $classname)) {
+            if (preg_match('/^FlagKey[A-Za-z]{1}.php$/', $classname)) {
                 array_push($this->availableFlagClasses, str_replace('.php', '', $classname));
             }
         }
