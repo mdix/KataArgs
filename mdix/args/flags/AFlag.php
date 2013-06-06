@@ -12,11 +12,12 @@ abstract class AFlag implements IFlag {
     public function getArgValue() {
         return $this->argValue;
     }
-    public function setArgValue($value) {
-        $this->argValue = $value;
-    }
     public function getErrorMessage() {
         return $this->errorMessage;
+    }
+
+    public function setArgValue($value) {
+        $this->argValue = $value;
     }
     protected function setErrorMessage($message) {
         $this->errorMessage = $message;

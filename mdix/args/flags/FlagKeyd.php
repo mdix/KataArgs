@@ -10,7 +10,7 @@ class FlagKeyd extends StringFlag {
     public function setArgValue($value) {
         if ($this->validateGivenValue($value)) {
             $this->argValue = $value;
-        };
+        }
     }
 
     private function validateGivenValue($value) {
