@@ -16,7 +16,7 @@ class FlagRegisterTest extends \PHPUnit_Framework_TestCase {
 
     public function testStoresTheWholeClassNamesWithoutExtension() {
         foreach($this->object->getAvailableFlagClasses() as $className) {
-            $this->assertRegExp('/FlagKey[A-Za-z]{1}$/', $className);
+            $this->assertRegExp('/^FlagKey[A-Za-z]{1}$/', $className);
         }
     }
 }
