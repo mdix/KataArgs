@@ -19,4 +19,12 @@ class FlagRegisterTest extends \PHPUnit_Framework_TestCase {
             $this->assertRegExp('/^FlagKey[A-Za-z]{1}$/', $className);
         }
     }
+
+    public function testGetFlagObjectForFlagKeyReturnsFlagIfPresent() {
+        $this->assertInstanceOf(__NAMESPACE__ . '\FlagKeyp', $this->object->getFlagObjectForKey('p'));
+    }
+
+    public function testGetFlagObjectForFlagKeyReturnsNullObject() {
+        $this->assertInstanceOf(__NAMESPACE__ . '\FlagKeyNull', $this->object->getFlagObjectForKey('z'));
+    }
 }
